@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".details.ItemDetailActivity">
+
+    <ImageView
+            android:layout_width="148dp"
+            android:layout_height="146dp" tools:srcCompat="@tools:sample/avatars" android:id="@+id/imageDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="32dp" app:layout_constraintHorizontal_bias="0.498"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textNameFood"
+            app:layout_constraintTop_toBottomOf="@+id/imageDetail" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="48dp"
+            app:layout_constraintHorizontal_bias="0.498"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textIngredient"
+            app:layout_constraintTop_toBottomOf="@+id/textNameFood"
+            android:layout_marginTop="52dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"/>
+    <Button
+            android:layout_width="74dp"
+            android:layout_height="50dp" android:id="@+id/buttonRemove"
+            style="@style/Widget.AppCompat.Button" android:textSize="24sp"
+            android:drawableBottom="@android:drawable/ic_media_rew"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/imageDetail"
+            android:layout_marginTop="168dp"/>
+    <Button
+            android:layout_width="74dp"
+            android:layout_height="50dp" android:id="@+id/buttonAdd"
+            style="@style/Widget.AppCompat.Button" android:textSize="24sp"
+            android:drawableBottom="@android:drawable/ic_media_ff" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.827" app:layout_constraintTop_toBottomOf="@+id/imageDetail"
+            android:layout_marginTop="168dp"/>
+    <TextView
+            android:text="0"
+            android:layout_width="67dp"
+            android:layout_height="38dp" android:id="@+id/textQuantity"
+            app:layout_constraintEnd_toStartOf="@+id/buttonAdd" app:layout_constraintStart_toEndOf="@+id/buttonRemove"
+            app:layout_constraintTop_toBottomOf="@+id/textIngredient" android:layout_marginTop="32dp"
+            android:textAlignment="center" android:textStyle="bold" android:textSize="24sp"/>
+    <Button
+            android:text="Total : 0€"
+            android:layout_width="219dp"
+            android:layout_height="45dp" android:id="@+id/buttonTotal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/textQuantity"
+            android:layout_marginTop="92dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

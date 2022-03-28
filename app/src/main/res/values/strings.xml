@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">AndroidERestaurant</string>
+    <string name="entrees">Entrées</string>
+    <string name="plats">Plats</string>
+    <string name="desserts">Desserts</string>
+    <string name="BLEs">BLE</string>
+
+    <string-array name="entreesList">
+        <item>Donut sucré au sucre</item>
+        <item>Barrrrt</item>
+        <item>Je vais me foutre le feu</item>
+    </string-array>
+
+    <string-array name="platsList">
+        <item>Spagayti</item>
+        <item>Gaybab</item>
+        <item>Gayspachio</item>
+    </string-array>
+
+    <string-array name="dessertsList">
+        <item>Donut</item>
+        <item>Tiramisu</item>
+        <item>Cocaine</item>
+    </string-array>
+</resources>
