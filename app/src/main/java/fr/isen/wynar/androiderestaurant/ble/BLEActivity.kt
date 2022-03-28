@@ -18,8 +18,8 @@ import androidx.core.content.PermissionChecker
 
 class BLEActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBleBinding
-
-
+    private var isScanning = false
+/*
     private val bleScanner = object : ScanCallback() {
         override fun onScanResult(callbackType: Int, result: ScanResult?) {
             Log.d("ScanDeviceActivity", "onScanResult(): ${result?.device?.address} - ${result?.device?.name}")
@@ -35,20 +35,18 @@ class BLEActivity : AppCompatActivity() {
 
     class ListDevicesAdapter(context: Context?, resource: Int) : ArrayAdapter<String>(context!!, resource) {
     }
-
+*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonStart.setOnClickListener {
-            binding.progressBarBLE.isIndeterminate = true
-            binding.textViewBLEState.text = "Recherche d'appareil bluetooh"
-        }
 
+        handlePlayPauseButton()
         Log.d("ScanDeviceActivity", "onCreate()")
 
     }
+    /*
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onStart() {
         Log.d("ScanDeviceActivity", "onStart()")
@@ -73,11 +71,23 @@ class BLEActivity : AppCompatActivity() {
             else -> super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
     }
-
+*/
+    private fun handlePlayPauseButton(){
+        binding.buttonStart.setOnClickListener {
+            if (isScanning) {
+                binding.progressBarBLE.isIndeterminate = false
+                binding.textViewBLEState.text = "Recherche d'appareil bluetooh"
+            } else {
+                binding.progressBarBLE.isIndeterminate = true
+                binding.textViewBLEState.text = "Lancer la recherche"
+            }
+        }
+    }
+/*
     override fun onStop() {
         Log.d("ScanDeviceActivity", "onStop()")
         super.onStop()
         bluetoothLeScanner.stopScan(bleScanner)
     }
-
+*/
 }
