@@ -21,18 +21,6 @@
                 android:name=".details.ItemDetailActivity"
                 android:exported="true"/>
         <activity
-                android:name=".carte.MenuActivity"
-                android:exported="true"/>
-        <activity
-                android:name=".carte.CarteActivity"
-                android:exported="true"/>
-        <activity
-                android:name=".carte.DessertActivity"
-                android:exported="true"/>
-        <activity
-                android:name=".carte.PlatActivity"
-                android:exported="true"/>
-        <activity
                 android:name=".carte.CarteActivity"
                 android:exported="true"/>
         <activity
