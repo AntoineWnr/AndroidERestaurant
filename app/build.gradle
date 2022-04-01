@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 30
+    compileSdk 32
 
     defaultConfig {
         applicationId "fr.isen.wynar.androiderestaurant"
-        minSdk 22
-        targetSdk 30
+        minSdk 23
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.rowland.cartcounter:CartCounter:1.0.0-beta-2'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.code.gson:gson:2.8.5'

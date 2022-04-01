@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".HomeActivity">
+
     <ImageView
             android:src="@drawable/autodraw_21_03_2022__1__removebg_preview"
             android:layout_width="187dp"
