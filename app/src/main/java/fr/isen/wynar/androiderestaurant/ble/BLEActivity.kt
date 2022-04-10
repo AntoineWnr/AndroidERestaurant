@@ -1,6 +1,5 @@
 package fr.isen.wynar.androiderestaurant.ble
 
-import BLEAdapter
 import android.Manifest
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
@@ -28,6 +27,7 @@ class BLEActivity : AppCompatActivity() {
 
     companion object{
         private const val ALL_PERMISSION_REQUEST_CODE = 1
+        const val DEVICE_KEY = "device"
     }
     private var scanning:Boolean=false
     private lateinit var binding : ActivityBleBinding
@@ -75,8 +75,8 @@ class BLEActivity : AppCompatActivity() {
         }else{
             Toast.makeText(this@BLEActivity, item.device.name.toString(), Toast.LENGTH_SHORT).show()
         }
-        val intent = Intent(this, BLEActivity::class.java)
-        intent.putExtra("Device", item)
+        val intent = Intent(this, BLEDeviceActivity::class.java)
+        intent.putExtra(DEVICE_KEY, item.device)
         startActivity(intent)
     }
 
@@ -169,11 +169,11 @@ class BLEActivity : AppCompatActivity() {
     private fun btnPlayClick() {
         binding.imgPlayBle.isVisible = true
         if (scanning) {
-            binding.imgPlayBle.setImageResource(R.drawable.ic_baseline_app_blocking_24)
+            binding.imgPlayBle.setImageResource(android.R.drawable.ic_media_pause)
             binding.textViewBLEState.text = "Chargement"
             binding.progressBarBLE.isIndeterminate = true
         } else {
-            binding.imgPlayBle.setImageResource(R.drawable.ic_baseline_arrow_right_24)
+            binding.imgPlayBle.setImageResource(android.R.drawable.ic_media_play)
             binding.textViewBLEState.text = "Lancer le scan"
             binding.progressBarBLE.isIndeterminate = false
         }
@@ -188,5 +188,8 @@ class BLEActivity : AppCompatActivity() {
         ) {
             startActivityForResult(enableBtIntent, ALL_PERMISSION_REQUEST_CODE)
         }
+
     }
+
+
 }

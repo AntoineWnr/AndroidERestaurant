@@ -1,4 +1,4 @@
-
+package fr.isen.wynar.androiderestaurant.ble
 import android.annotation.SuppressLint
 import android.bluetooth.le.ScanResult
 import android.view.LayoutInflater
