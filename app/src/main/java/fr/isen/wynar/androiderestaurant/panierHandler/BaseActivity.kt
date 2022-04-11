@@ -20,8 +20,7 @@ open class BaseActivity : AppCompatActivity(){
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.panier -> {
-                val currentText = File(cacheDir.absolutePath+"dataPanier.json").readText()
-                File(cacheDir.absolutePath+"dataPanier.json").writeText(currentText + "]}")
+
                 val intent = Intent(this, PanierActivity::class.java)
                 startActivity(intent)
                 true

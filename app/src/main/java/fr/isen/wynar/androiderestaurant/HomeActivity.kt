@@ -11,6 +11,8 @@ import fr.isen.wynar.androiderestaurant.ble.BLEActivity
 import fr.isen.wynar.androiderestaurant.carte.CarteActivity
 import fr.isen.wynar.androiderestaurant.databinding.ActivityHomeBinding
 import fr.isen.wynar.androiderestaurant.panierHandler.BaseActivity
+import org.json.JSONArray
+import org.json.JSONObject
 import java.io.File
 
 class HomeActivity : BaseActivity(){
@@ -19,9 +21,8 @@ class HomeActivity : BaseActivity(){
 
         super.onCreate(savedInstanceState)
 
-        val stringText = "{ \"plats\": ["
-        Log.d("DEBUG","Fin HomeActivity")
-        File(cacheDir.absolutePath+"dataPanier.json").writeText(stringText)
+
+
 
 
         binding = ActivityHomeBinding.inflate(layoutInflater)

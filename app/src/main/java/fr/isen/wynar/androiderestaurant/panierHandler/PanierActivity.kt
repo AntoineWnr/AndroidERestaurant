@@ -1,15 +1,13 @@
 package fr.isen.wynar.androiderestaurant.panierHandler
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
-import fr.isen.wynar.androiderestaurant.R
-import fr.isen.wynar.androiderestaurant.apiRestaurant.Data
-import fr.isen.wynar.androiderestaurant.carte.CarteAdapter
-import fr.isen.wynar.androiderestaurant.databinding.ActivityHomeBinding
+import com.google.gson.stream.JsonReader
 import fr.isen.wynar.androiderestaurant.databinding.ActivityPanierBinding
+import java.io.File
+import java.io.StringReader
 
 class PanierActivity : BaseActivity() {
     private lateinit var binding: ActivityPanierBinding
@@ -20,13 +18,14 @@ class PanierActivity : BaseActivity() {
         setContentView(binding.root)
 
 
+        val currentText = File(cacheDir.absolutePath+"dataPanier.json").readText()
+        val gson = Gson().fromJson(currentText,PlatModel::class.java)
 
-        val item = Gson().fromJson(cacheDir.absolutePath+"dataPanier.json", PlatModel::class.java)
-        Log.d("ICILA", item.plats.toString())
-
+        Log.d("Mashallah",gson.plats.toString())
 
         binding.recyclerViewPanier.layoutManager = LinearLayoutManager(this)
-        //val adapter = PanierAdapter(arrayOfPlats)
+        val adapter = PanierAdapter(gson.plats)
+        binding.recyclerViewPanier.adapter = adapter
 
 
     }

@@ -8,6 +8,8 @@ import fr.isen.wynar.androiderestaurant.apiRestaurant.Item
 import fr.isen.wynar.androiderestaurant.databinding.ActivityItemDetailBinding
 import fr.isen.wynar.androiderestaurant.panierHandler.BaseActivity
 import fr.isen.wynar.androiderestaurant.panierHandler.PanierData
+import org.json.JSONArray
+import org.json.JSONObject
 import java.io.File
 
 class ItemDetailActivity : BaseActivity() {
@@ -61,8 +63,19 @@ class ItemDetailActivity : BaseActivity() {
                 var panierData = PanierData(param.name_fr, qty, total)
                 val jsonString = Gson().toJson(panierData)
                 var currentText = ""
-                currentText = File(cacheDir.absolutePath+"dataPanier.json").readText()
-                File(cacheDir.absolutePath+"dataPanier.json").writeText(currentText + jsonString)
+
+                val jsonObjectIn = JSONObject()
+                jsonObjectIn.put("name",param.name_fr)
+                jsonObjectIn.put("qty",qty)
+                jsonObjectIn.put("total",total)
+
+                val jsonArray = JSONArray()
+                jsonArray.put(jsonObjectIn)
+
+                val jsonObject = JSONObject()
+                jsonObject.put("plats",jsonArray)
+
+                File(cacheDir.absolutePath+"dataPanier.json").writeText(jsonObject.toString())
 
 
 

@@ -1,32 +1,34 @@
 package fr.isen.wynar.androiderestaurant.panierHandler
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import fr.isen.wynar.androiderestaurant.R
-import fr.isen.wynar.androiderestaurant.apiRestaurant.Item
-import fr.isen.wynar.androiderestaurant.carte.CarteAdapter
-import fr.isen.wynar.androiderestaurant.databinding.CellBleBinding
+
 import fr.isen.wynar.androiderestaurant.databinding.CellPanierBinding
 
 class PanierAdapter(private val arrayList: ArrayList<PanierData>) : RecyclerView.Adapter<PanierAdapter.PanierViewHolder>()  {
 
     private lateinit var binding: CellPanierBinding
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PanierAdapter.PanierViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PanierViewHolder {
         binding = CellPanierBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PanierViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: PanierAdapter.PanierViewHolder, position: Int) {
-        TODO("Not yet implemented")
+    @SuppressLint("SetTextI18n")
+    override fun onBindViewHolder(holder: PanierViewHolder, position: Int) {
+        val item = arrayList[position]
+        holder.name.text =  "Plats : " + item.name
+        holder.total.text = "Total : " + item.total.toString() + "€"
+        holder.qty.text = "Quantité : ${item.qty} "
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return arrayList.size
     }
 
     class PanierViewHolder(binding: CellPanierBinding) : RecyclerView.ViewHolder(binding.root) {

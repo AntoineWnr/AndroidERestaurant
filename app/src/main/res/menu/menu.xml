@@ -4,5 +4,5 @@
             android:id="@+id/panier"
             android:state_pressed="true"
             android:state_enabled="true"
-            android:drawable="@android:drawable/sym_contact_card" android:title="Salut"/>
+            android:drawable="@android:drawable/sym_contact_card" android:title="@string/panier"/>
 </menu>

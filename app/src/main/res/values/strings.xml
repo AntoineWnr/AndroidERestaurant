@@ -4,6 +4,7 @@
     <string name="plats">Plats</string>
     <string name="desserts">Desserts</string>
     <string name="BLEs">BLE</string>
+    <string name="panier">Panier</string>
 
     <string-array name="entreesList">
         <item>Donut sucré au sucre</item>
