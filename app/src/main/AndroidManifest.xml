@@ -37,6 +37,9 @@
             android:theme="@style/Theme.AndroidERestaurant"
             android:usesCleartextTraffic="true">
         <activity
+                android:name=".panierHandler.PanierActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".ble.BLEDeviceActivity"
                 android:exported="true"/>
         <activity

@@ -10,10 +10,11 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.isen.wynar.androiderestaurant.databinding.ActivityBledeviceBinding
+import fr.isen.wynar.androiderestaurant.panierHandler.BaseActivity
 
 import java.util.*
 
-class BLEDeviceActivity : AppCompatActivity() {
+class BLEDeviceActivity : BaseActivity() {
     private lateinit var binding: ActivityBledeviceBinding
     private var bluetoothGatt: BluetoothGatt? = null
     private var timer: Timer? = null

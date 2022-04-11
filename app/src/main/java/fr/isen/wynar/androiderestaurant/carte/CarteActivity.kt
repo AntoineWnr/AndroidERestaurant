@@ -15,10 +15,11 @@ import fr.isen.wynar.androiderestaurant.apiRestaurant.Data
 import fr.isen.wynar.androiderestaurant.apiRestaurant.Item
 import fr.isen.wynar.androiderestaurant.databinding.ActivityCarteBinding
 import fr.isen.wynar.androiderestaurant.details.ItemDetailActivity
+import fr.isen.wynar.androiderestaurant.panierHandler.BaseActivity
 import org.json.JSONObject
 
 
-class CarteActivity : AppCompatActivity() {
+class CarteActivity : BaseActivity() {
     private lateinit var binding: ActivityCarteBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

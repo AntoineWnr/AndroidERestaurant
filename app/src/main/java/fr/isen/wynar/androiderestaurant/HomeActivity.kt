@@ -4,15 +4,25 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import fr.isen.wynar.androiderestaurant.ble.BLEActivity
 import fr.isen.wynar.androiderestaurant.carte.CarteActivity
 import fr.isen.wynar.androiderestaurant.databinding.ActivityHomeBinding
+import fr.isen.wynar.androiderestaurant.panierHandler.BaseActivity
 import java.io.File
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity(){
     private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
+        val stringText = "{ \"plats\": ["
+        Log.d("DEBUG","Fin HomeActivity")
+        File(cacheDir.absolutePath+"dataPanier.json").writeText(stringText)
+
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -46,10 +56,8 @@ class HomeActivity : AppCompatActivity() {
     }
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("DEBUG","Fin HomeActivity")
-        File(cacheDir.absolutePath+"dataPanier.json").writeText("")
 
     }
 
-}
 
+}

@@ -21,9 +21,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import fr.isen.wynar.androiderestaurant.R
 import fr.isen.wynar.androiderestaurant.databinding.ActivityBleBinding
+import fr.isen.wynar.androiderestaurant.panierHandler.BaseActivity
 
 
-class BLEActivity : AppCompatActivity() {
+class BLEActivity : BaseActivity() {
 
     companion object{
         private const val ALL_PERMISSION_REQUEST_CODE = 1
